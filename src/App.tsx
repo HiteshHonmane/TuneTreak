@@ -4,6 +4,7 @@ import SongCard from "./components/songCards/SongCard";
 import LongSongCard from "./components/songCards/LongSongCard";
 import PlayingSongCard from "./components/songCards/PlayingSongCard";
 import SideBar from "./components/side Bar/SideBar";
+import Navbar from './components/Home/NavBar.jsx'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ function App() {
       <div className=" w-full h-screen flex items-center justify-center">
         {/* <SongCard /> */}
         <SideBar/>
+        {/* <Navbar/> */}
         
       </div>
     </>
