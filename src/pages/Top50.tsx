@@ -5,7 +5,7 @@ import SongCard from '../components/songCards/SongCard'
 
 function Top50() {
   return (
-   <div className=' w-[1062px] h-[317px] p-6'> 
+   <div className=' w-[1062px] h-[317px] bg-white p-6 rounded-[24px]'> 
     <div className='  flex  justify-between items-center text-xl font-medium font-sf-pro-display '>
         <span>Chart: Top 50</span>
         <div className=' flex gap-5'>

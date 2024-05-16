@@ -8,7 +8,7 @@ import Play from '/assets/video-circle.svg'
 
 function PlayingSongCard() {
   return (
-    <div className=' w-[280px] h-[441px] flex flex-col border rounded-[16px] items-center justify-center '>
+    <div className=' w-[280px] h-[441px] flex flex-col rounded-[16px] items-center justify-center  bg-white '>
         <div className=' rounded-[16px] mb-[20px] '>
             <img className='rounded-[16px] ' width={248} height={213} src={SongSvg} alt="" />
         </div>
