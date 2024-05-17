@@ -15,7 +15,7 @@ function LongSongCard() {
 
       <div className=" absolute flex items-center left-0 ">
         <div className=" w-[234px] h-[84px]  flex gap-[24px] justify-center items-center  ">
-          <img width={84} src={albumSvg} alt="" />
+          <img className="" width={84} src={albumSvg} alt="" />
           <span className=" w-[126px] h-[44px] font-sf-pro-display  flex flex-col gap-1  ">
             <div className=" text-[16px] text-[#0A0502] font-medium  ">
               She Will Be Loved
