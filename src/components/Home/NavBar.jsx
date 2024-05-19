@@ -3,7 +3,7 @@ import React from 'react'
 
 function NavBar() {
   return (
-    <div className="w-[1046px] h-[50px] justify-start items-center gap-[563px] inline-flex">
+    <div className="w-[1046px] h-[50px] justify-start items-center gap-[563px] inline-flex  ">
     <div className="h-[29px] justify-center items-center gap-2 flex">
         <div className="text-stone-950 text-2xl font-bold font-['SF Pro Display'] leading-[28.80px] tracking-tight">Discover</div>
         <div className="w-4 h-4 justify-center items-center flex">

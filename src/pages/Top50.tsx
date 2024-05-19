@@ -5,7 +5,7 @@ import SongCard from '../components/songCards/SongCard'
 
 function Top50() {
   return (
-   <div className=' w-[1062px] h-[317px] bg-white p-6 rounded-[24px]'> 
+   <div className='  w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw] '> 
     <div className='  flex  justify-between items-center text-xl font-medium font-sf-pro-display '>
         <span>Chart: Top 50</span>
         <div className=' flex gap-5'>
@@ -13,12 +13,13 @@ function Top50() {
            <button> <img src={rightarrowsvg} alt="" /></button>
         </div>
     </div>
-    <div className='mt-5 flex gap-8'>
+    <div className='mt-5 flex gap-8 overflow-x'>
     <SongCard/>
     <SongCard/>
     <SongCard/>
     <SongCard/>
-    <SongCard/>
+   
+    
     </div>
    </div>
   )
