@@ -2,8 +2,10 @@ import React from "react";
 import LongSongCard from "../components/songCards/LongSongCard";
 
 function ListeningHistory() {
+
+  
   return (
-    <div className=" lg:w-[750px] h-[441px] relative bg-white/opacity-70 rounded-3xl p-6 bg-white  overflow-y-scroll ">
+    <div className=" w-[750px] h-[441px] relative bg-white/opacity-70 rounded-3xl p-6 bg-white  overflow-y-scroll ">
       <div className=" flex flex-row justify-between items-center">
         <span className=" text-stone-950 text-xl font-sf-pro-display font-medium leading-normal tracking-wide ">
           Listening History

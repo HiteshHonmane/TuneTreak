@@ -5,8 +5,9 @@ import people from "../../../public/assets/people.svg";
 import heart from "../../../public/assets/heart.svg";
 
 function LongSongCard() {
+  
   return (
-    <div className=" lg:w-[686px] h-[116px] bg-[#fbfbfb]  flex justify-end items-end  relative   
+    <div className=" w-[686px] h-[116px] bg-[#fbfbfb]  flex justify-end items-end  relative   
     ">
       <div
         id="plane-white-box"
