@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { denzerApi, shazamCoreApi } from '../services/DenzerApi.tsx'
+import { denzerApi } from '../services/DenzerApi.tsx'
 
 export const store = configureStore({
     reducer:{
@@ -7,5 +7,5 @@ export const store = configureStore({
 
         player: playerReducer,
     },
-    middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(shazamCoreApi.middleware)
+    middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(denzerApi.middleware)
 })

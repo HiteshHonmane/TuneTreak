@@ -1,9 +1,16 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import leftarrowsvg from '../../public/assets/arrow-left.svg'
 import rightarrowsvg from '../../public/assets/arrow-right.svg'
 import SongCard from '../components/songCards/SongCard'
+import { useGetArtistAlbumQuery } from '../services/DenzerApi'
 
 function Top50() {
+  const{ data, isFetching, error} = useGetArtistAlbumQuery();
+  const generTitle = 'POP'
+  console.log(data)
+
+
   return (
    <div className='  w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw] '> 
     <div className='  flex  justify-between items-center text-xl font-medium font-sf-pro-display '>
