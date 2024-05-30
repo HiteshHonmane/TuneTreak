@@ -1,12 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-
 import previous from '/assets/previous.svg';
 import forward from '/assets/forward.svg';
 import next from '/assets/next.svg';
 import backward from '/assets/backward.svg';
 import Play from '/assets/video-circle.svg';
-
 
 const PlayingSongCard: React.FC = () => {
 

@@ -1,4 +1,3 @@
-// hooks/useFetchSongs.ts
 import { useState, useEffect } from 'react';
 
 const useFetchSongs = (query: string) => {
@@ -24,7 +23,11 @@ const useFetchSongs = (query: string) => {
         const data = await response.json();
         setSongs(data.data);
       } catch (error) {
-        setError(error.message);
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError('An unknown error occurred');
+        }
       } finally {
         setLoading(false);
       }
