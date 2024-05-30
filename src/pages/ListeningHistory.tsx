@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import LongSongCard from "../components/songCards/LongSongCard";
 import useFetchSongs from "../hooks/useFetchSongs";
-import { current } from "@reduxjs/toolkit";
+
+
 
 const ListeningHistory: React.FC = () => {
   const { songs, loading, error } = useFetchSongs('eminem');
-  const [currentPlayingId, setCurrentPlayingId] = useState<number | null>(null);
-  
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
-  console.log(songs); // Debugging line
+  console.log(songs); 
 
   return (
     <div className=" w-[750px] h-[441px] relative bg-white/opacity-70 rounded-3xl p-6 bg-white overflow-y-scroll  ">
@@ -25,8 +25,6 @@ const ListeningHistory: React.FC = () => {
       <div className=" mt-5 ">
         {songs.map(song => (<LongSongCard key={song.id}
          song={song}
-         isPlaying={currentPlayingId===song.id}
-         setCurrentPlayingId={setCurrentPlayingId}
          />))}
       </div>
     </div>

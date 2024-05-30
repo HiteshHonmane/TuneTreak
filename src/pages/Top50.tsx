@@ -16,7 +16,7 @@ interface Song {
 
 const Top50: React.FC = () => {
   const [songs, setSongs] = useState<Song[]>([]);
-
+  const artist = 
   useEffect(() => {
     const options = {
       method: "GET",
@@ -26,7 +26,7 @@ const Top50: React.FC = () => {
       },
     };
 
-    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", options)
+    fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist}`, options)
       .then((res) => res.json())
       .then((data) => {
         setSongs(data.data); 

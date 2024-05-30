@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Logo from "../../../public/assets/Logo.svg";
 import Home from "../../../public/assets/home-2.svg";
 import search from "../../../public/assets/search-normal.svg";
@@ -6,11 +6,12 @@ import Likes from "../../../public/assets/Likes.svg";
 import Playlists from "../../../public/assets/music-square-add.svg";
 import Albums from "../../../public/assets/audio-square.svg";
 import Following from "../../../public/assets/profile.svg";
-import SettingsSvg from '../../../public/assets/setting-2.svg'
 import SubSvg from '../../../public/assets/crown.svg'
 import LogoutSvg from '../../../public/assets/login.svg'
 
 function SideBar() {
+  
+   const[input, setInput]=useState<string>()
   return (
     <div className=" w-[314px] h-[100vh] border ">
       <div id="logo" className=" flex flex-row gap-[16px] mt-11 ml-8 ">
@@ -29,6 +30,10 @@ function SideBar() {
           <li className=" flex gap-[20px] ">
             <img src={search} alt="" />
             Search
+            <input type="text" placeholder="Artist, Song"
+            value={input}
+            onChange={(e)=> setInput(e.target.value)}
+             />
           </li>
           <li className=" flex gap-[20px]  ">
             <img src={Likes} alt="" />
