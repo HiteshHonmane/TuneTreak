@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import leftarrowsvg from '../../public/assets/arrow-left.svg';
 import rightarrowsvg from '../../public/assets/arrow-right.svg';
 import SongCard from '../components/songCards/SongCard';
@@ -15,7 +15,7 @@ interface Song {
   };
 }
 
-const Top50: React.FC = () => {
+const Top50: React.FC<Song> = () => {
   const { songs, loading, error } = useFetchSongs('eminem');
 
   if (loading) return <p>Loading...</p>;
