@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import musicNotesvg from "../../../public/assets/musicnote.svg";
+import people from "../../../public/assets/people.svg";
+import heart from "../../../public/assets/heart.svg";
 
-
-interface LongSongCardProps {
-  song: {
-    id: number;
-    title: string;
-    artist: {
-      name: string;
-    };
-    album: {
-      cover_medium: string;
-    };
-    preview: string;
+interface Song {
+  id: number;
+  title: string;
+  artist: {
+    name: string;
   };
+  album: {
+    cover_medium: string;
+  };
+  preview: string;
 }
 
-const LongSongCard: React.FC<LongSongCardProps> = ({ song }) => {
-  
+interface LongSongCardProps {
+  song: Song;
+  isPlaying: boolean;
+  setCurrentPlayingId: (id: number | null) => void;
+}
 
-  
+const LongSongCard: React.FC<LongSongCardProps> = ({ song, isPlaying, setCurrentPlayingId }) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlaying]);
+
+  const handlePlayPause = () => {
+    if (isPlaying) {
+      setCurrentPlayingId(null);
+    } else {
+      setCurrentPlayingId(song.id);
+    }
+  };
+
   return (
     <div className="w-[686px] h-[116px] bg-[#fbfbfb] flex justify-end items-end relative">
       <div id="plane-white-box" className="w-[644px] h-[100px] bg-white flex rounded-[16px]"></div>
@@ -36,24 +59,26 @@ const LongSongCard: React.FC<LongSongCardProps> = ({ song }) => {
       <div className="w-full h-full absolute flex flex-row justify-end gap-[24px] mr-16">
         <div className="w-[78px] h-[32px] flex flex-row justify-center items-center border border-[#FFD7C2] rounded-md">
           <span>
-            <img src="/assets/musicnote.svg" alt="musicNote" />
+            <img src={musicNotesvg} alt="musicNote" />
           </span>
-          <span className="font-sf-pro-display text-sm text-[#99938F]">120k</span>
+          <span className="font-sf-pro-display text-sm text-[#99938F]">
+            120k
+          </span>
         </div>
         <div className="w-[32px] h-[32px] flex items-center justify-center border border-[#FFD7C2] rounded-md">
-          <img src="/assets/people.svg" alt="" />
+          <img src={people} alt="" />
         </div>
         <div className="w-[32px] h-[32px] flex items-center justify-center border border-[#FFD7C2] rounded-md">
-          <img className=" " src="/assets/heart.svg" alt="" />
+          <img className=" " src={heart} alt="" />
         </div>
         <div
           className="w-[32px] h-[32px] flex items-center justify-center border border-[#FFD7C2] rounded-md cursor-pointer"
-         
+          onClick={handlePlayPause}
         >
-          
+          {isPlaying ? 'Pause' : 'Play'}
         </div>
       </div>
-      <audio  src={song.preview}></audio>
+      <audio ref={audioRef} src={song.preview}></audio>
     </div>
   );
 };
