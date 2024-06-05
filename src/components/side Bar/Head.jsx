@@ -1,7 +1,6 @@
 import React from 'react'
 
-
-function NavBar() {
+function Head() {
   return (
     <div className="w-[1046px] h-[50px] justify-start items-center gap-[563px] inline-flex  ">
     <div className="h-[29px] justify-center items-center gap-2 flex">
@@ -29,4 +28,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default Head

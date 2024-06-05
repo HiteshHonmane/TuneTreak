@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import leftarrowsvg from '../../public/assets/arrow-left.svg';
 import rightarrowsvg from '../../public/assets/arrow-right.svg';
 import SongCard from '../components/songCards/SongCard';
+import useFetchSongs from "../hooks/useFetchSongs";
 
 interface Song {
   id: number;
@@ -14,30 +15,14 @@ interface Song {
   };
 }
 
-const Top50: React.FC = () => {
-  const [songs, setSongs] = useState<Song[]>([]);
-  const artist = 
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "2f8ec1fc40msh87d5856848d2f52p1b7503jsne20b9ce85403",
-        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-      },
-    };
+const Top50: React.FC = () => {  
+  const { songs, loading, error } = useFetchSongs('eminem');
 
-    fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist}`, options)
-      .then((res) => res.json())
-      .then((data) => {
-        setSongs(data.data); 
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
-    <div className='w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw]  '>
+    <div className='w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw]'>
       <div className='flex justify-between items-center text-xl font-medium font-sf-pro-display'>
         <span>Chart: Top 50</span>
         <div className='flex gap-5'>
@@ -46,11 +31,9 @@ const Top50: React.FC = () => {
         </div>
       </div>
       <div className='mt-5 flex gap-8 overflow-x-scroll'>
-
-        {songs.map((song) => (
+        {songs.map((song: Song) => (
           <SongCard key={song.id} song={song} />
         ))}
-        
       </div>
     </div>
   );
