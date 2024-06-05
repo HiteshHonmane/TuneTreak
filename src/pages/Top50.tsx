@@ -15,15 +15,14 @@ interface Song {
   };
 }
 
-const Top50: React.FC<Song> = () => {
+const Top50: React.FC = () => {  
   const { songs, loading, error } = useFetchSongs('eminem');
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
-  
   return (
-    <div className='w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw]  '>
+    <div className='w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw]'>
       <div className='flex justify-between items-center text-xl font-medium font-sf-pro-display'>
         <span>Chart: Top 50</span>
         <div className='flex gap-5'>
@@ -32,11 +31,9 @@ const Top50: React.FC<Song> = () => {
         </div>
       </div>
       <div className='mt-5 flex gap-8 overflow-x-scroll'>
-
-        {songs.map((song) => (
+        {songs.map((song: Song) => (
           <SongCard key={song.id} song={song} />
         ))}
-        
       </div>
     </div>
   );
