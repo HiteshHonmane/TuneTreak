@@ -4,13 +4,14 @@ import forward from '/assets/forward.svg';
 import next from '/assets/next.svg';
 import backward from '/assets/backward.svg';
 import Play from '/assets/video-circle.svg';
+import songImg from '/assets/song.png'
 
 const PlayingSongCard: React.FC = () => {
 
   return (
     <div className='w-[280px] h-[441px] flex flex-col rounded-[16px] items-center justify-center bg-white'>
       <div className='rounded-[16px] mb-[20px]'>
-        <img className='rounded-[16px]' width={248} height={213} src={'Image'} alt={''} />
+        <img className='rounded-[16px]' width={248} height={213} src={ songImg } alt={''} />
       </div>
       <div className='w-[248px] h-[99px] flex flex-col items-center'>
         <div id="songName" className='font-sf-pro-display font-bold text-[18px]'>
