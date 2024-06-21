@@ -3,8 +3,7 @@ import PlayingSongCard from "./components/songCards/PlayingSongCard";
 import SideBar from "./components/side Bar/SideBar";
 import Top50 from "./pages/Top50.js";
 import ListeningHistory from "./pages/ListeningHistory.js";
-
-
+import Head from "./components/side Bar/Head.js";
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
         </div>
         <div className=" flex flex-col">
           <div className=" ml-8 mt-11">
-          
+          <Head/>
           </div>
           <div className="  mt-8 ml-8 ">
             <Top50 />
