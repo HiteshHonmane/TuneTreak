@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import musicNotesvg from "../../../public/assets/musicnote.svg";
 import people from "../../../public/assets/people.svg";
 import heart from "../../../public/assets/heart.svg";
+import playsvg from '../../../public/assets/play.svg'
+import pausesvg from '../../../public/assets/pause-circle-svgrepo-com.svg'
 
 interface Song {
   id: number;
@@ -72,10 +74,11 @@ const LongSongCard: React.FC<LongSongCardProps> = ({ song, isPlaying, setCurrent
           <img className=" " src={heart} alt="" />
         </div>
         <div
-          className="w-[32px] h-[32px] flex items-center justify-center border border-[#FFD7C2] rounded-md cursor-pointer"
+          className="w-[48px] h-[32px] flex items-center justify-center    cursor-pointer"
           onClick={handlePlayPause}
         >
-          {isPlaying ? 'Pause' : 'Play'}
+          {isPlaying ? <img width={38} src={pausesvg} alt="pause" /> : <img width={38} src={playsvg} alt="play" />}
+
         </div>
       </div>
       <audio ref={audioRef} src={song.preview}></audio>
