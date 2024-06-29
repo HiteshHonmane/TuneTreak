@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import LongSongCard from '../components/songCards/LongSongCard';
 import useFetchSongs from '../hooks/useFetchSongs';
+import Loading from '../components/Loading';
 
 const ListeningHistory: React.FC = () => {
   const { songs, loading, error } = useFetchSongs('eminem');
   const [currentPlayingId, setCurrentPlayingId] = useState<number | null>(null);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div>
+  <Loading/>
+  </div>;
   if (error) return <p>{error}</p>;
 
   return (

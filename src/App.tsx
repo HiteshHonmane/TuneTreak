@@ -13,15 +13,15 @@ function App() {
           <SideBar />
         </div>
         <div className=" flex flex-col">
-          <div className=" ml-8 mt-11">
-          <Head/>
+          <div className="  ml-8 mt-11">
+            <Head />
           </div>
           <div className="  mt-8 ml-8 ">
             <Top50 />
           </div>
           <div>
             <div className=" flex flex-wrap ">
-              <div className=" ml-8 mt-8 ">
+              <div className="hidden md:block ml-8 mt-8 ">
                 <ListeningHistory />
               </div>
               <div className=" ml-8 mt-8">

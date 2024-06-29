@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import musicNotesvg from "../../../public/assets/musicnote.svg";
-import people from "../../../public/assets/people.svg";
-import heart from "../../../public/assets/heart.svg";
-import playsvg from '../../../public/assets/play.svg'
-import pausesvg from '../../../public/assets/pause-circle-svgrepo-com.svg'
+import musicNotesvg from "/assets/musicnote.svg";
+import people from "/assets/people.svg";
+import heart from "/assets/heart.svg";
+import playsvg from '/assets/play.svg'
+import pausesvg from '/assets/pause-circle-svgrepo-com.svg'
 
 interface Song {
   id: number;
