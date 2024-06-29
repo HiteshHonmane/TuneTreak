@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Logo from "../../../public/assets/Logo.svg";
-import Home from "../../../public/assets/home-2.svg";
-import search from "../../../public/assets/search-normal.svg";
-import Likes from "../../../public/assets/Likes.svg";
-import Playlists from "../../../public/assets/music-square-add.svg";
-import Albums from "../../../public/assets/audio-square.svg";
-import Following from "../../../public/assets/profile.svg";
-import SubSvg from '../../../public/assets/crown.svg'
-import LogoutSvg from '../../../public/assets/login.svg'
+import Logo from "/assets/Logo.svg";
+import Home from "/assets/home-2.svg";
+import search from "/assets/search-normal.svg";
+import Likes from "/assets/Likes.svg";
+import Playlists from "/assets/music-square-add.svg";
+import Albums from "/assets/audio-square.svg";
+import Following from "/assets/profile.svg";
+import SubSvg from '/assets/crown.svg'
+import LogoutSvg from '/assets/login.svg'
 
 function SideBar() {
   
@@ -70,7 +70,9 @@ function SideBar() {
           <img src={LogoutSvg} alt="" />
           <div>Logout</div>
         </div>
+        
       </div>
+      
     </div>
   );
 }

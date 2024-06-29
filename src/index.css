@@ -57,3 +57,7 @@
 ::-webkit-scrollbar-thumb:horizontal:hover {
     background: #555;
 }
+
+.webscrollbarhidden::-webkit-scrollbar{
+display: none;
+}
