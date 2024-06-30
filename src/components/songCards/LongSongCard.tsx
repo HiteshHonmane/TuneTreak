@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import musicNotesvg from "/assets/musicnote.svg";
 import people from "/assets/people.svg";
 import heart from "/assets/heart.svg";
-import playsvg from '/assets/play.svg'
-import pausesvg from '/assets/pause-circle-svgrepo-com.svg'
+import playsvg from "/assets/play.svg";
+import pausesvg from "/assets/pause-circle-svgrepo-com.svg";
 
 interface Song {
   id: number;
@@ -23,7 +23,11 @@ interface LongSongCardProps {
   setCurrentPlayingId: (id: number | null) => void;
 }
 
-const LongSongCard: React.FC<LongSongCardProps> = ({ song, isPlaying, setCurrentPlayingId }) => {
+const LongSongCard: React.FC<LongSongCardProps> = ({
+  song,
+  isPlaying,
+  setCurrentPlayingId,
+}) => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -45,8 +49,11 @@ const LongSongCard: React.FC<LongSongCardProps> = ({ song, isPlaying, setCurrent
   };
 
   return (
-    <div className="w-[686px] h-[116px] bg-[#fbfbfb] flex justify-end items-end relative">
-      <div id="plane-white-box" className="w-[644px] h-[100px] bg-white flex rounded-[16px]"></div>
+    <div className="2xl:w-[1170px] 2lg:w-[640px] xl:w-[700px] h-[116px] bg-[#fbfbfb] flex justify-end items-end relative">
+      <div
+        id="plane-white-box"
+        className="w-[644px] h-[100px] bg-white flex rounded-[16px]"
+      ></div>
       <div className="absolute flex items-center left-0">
         <div className="w-[234px] h-[84px] flex gap-[24px] justify-center items-center">
           <img width={84} src={song.album.cover_medium} alt={song.title} />
@@ -77,8 +84,11 @@ const LongSongCard: React.FC<LongSongCardProps> = ({ song, isPlaying, setCurrent
           className="w-[48px] h-[32px] flex items-center justify-center    cursor-pointer"
           onClick={handlePlayPause}
         >
-          {isPlaying ? <img width={38} src={pausesvg} alt="pause" /> : <img width={38} src={playsvg} alt="play" />}
-
+          {isPlaying ? (
+            <img width={38} src={pausesvg} alt="pause" />
+          ) : (
+            <img width={38} src={playsvg} alt="play" />
+          )}
         </div>
       </div>
       <audio ref={audioRef} src={song.preview}></audio>
