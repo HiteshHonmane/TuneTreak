@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 
-const useFetchSongs = (query: string) => {
+const useFetchSongs = (initialQuery: string) => {
+  const [query, setQuery] = useState<string>(initialQuery);
   const [songs, setSongs] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchSongs = async () => {
+      const searchQuery = query.trim() === "" ? "Atif" : query;
       const options = {
         method: "GET",
         headers: {
@@ -16,7 +18,7 @@ const useFetchSongs = (query: string) => {
       };
 
       try {
-        const response = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${query}`, options);
+        const response = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchQuery}`, options);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
@@ -29,12 +31,16 @@ const useFetchSongs = (query: string) => {
           setError('An unknown error occurred');
         }
       } finally {
-        setLoading(false);
+        setLoading(false);  // Ensure loading is set to false after fetch completes
       }
     };
 
     fetchSongs();
   }, [query]);
+
+  useEffect(() => {
+    setQuery(initialQuery);  // Update query when initialQuery changes
+  }, [initialQuery]);
 
   return { songs, loading, error };
 };
