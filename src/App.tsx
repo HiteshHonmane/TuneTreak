@@ -1,10 +1,10 @@
 import "./App.css";
 import PlayingSongCard from "./components/songCards/PlayingSongCard";
-import SideBar from "./components/side Bar/SideBar";
-import Top50 from "./pages/Top50.js";
-import ListeningHistory from "./pages/ListeningHistory.js";
+import SideBar from "./components/side Bar/SideBar.tsx";
+import Top50 from "./pages/Top50.tsx";
+import ListeningHistory from "./pages/ListeningHistory.tsx";
 import Head from "./components/side Bar/Head.js";
-import SearchState from "./context/SearchState.js";
+import SearchState from "./context/SearchState.tsx";
 
 
 function App() {
