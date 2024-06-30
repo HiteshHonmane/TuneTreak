@@ -4,10 +4,14 @@ import SideBar from "./components/side Bar/SideBar";
 import Top50 from "./pages/Top50.js";
 import ListeningHistory from "./pages/ListeningHistory.js";
 import Head from "./components/side Bar/Head.js";
+import SearchState from "./context/SearchState.js";
+
 
 function App() {
   return (
     <>
+    
+    <SearchState>
       <div className=" w-[100vw] h-screen flex bg-gray-100">
         <div>
           <SideBar />
@@ -31,6 +35,7 @@ function App() {
           </div>
         </div>
       </div>
+      </SearchState>
     </>
   );
 }

@@ -43,7 +43,7 @@ const Top50: React.FC = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className='w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw] '>
+    <div className=' 2lg:w-[1000px] xl:w-[1062px] h-[317px] bg-white p-6 rounded-[24px] 2xl:w-[80vw]  '>
       <div className='flex justify-between items-center text-xl font-medium font-sf-pro-display'>
         <span>Chart: Top 50</span>
         <div className='flex gap-5'>
