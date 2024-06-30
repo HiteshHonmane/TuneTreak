@@ -9,6 +9,8 @@ import Following from "/assets/profile.svg";
 import SubSvg from "/assets/crown.svg";
 import LogoutSvg from "/assets/login.svg";
 import { SearchContext } from "../../context/SearchContext";
+import appleimg from "/assets/App Store.svg";
+import playstoreimg from "/assets/Google Play.svg";
 
 const SideBar: React.FC = () => {
   const { search, handleSearch } = useContext(SearchContext);
@@ -107,11 +109,11 @@ const SideBar: React.FC = () => {
             <div className="justify-center items-center gap-5 inline-flex">
               <img
                 className="w-[115px] h-[39px] rounded-md"
-                src="public/assets/App Store.png"
+                src={appleimg}
               />
               <img
                 className="w-[115px] h-[39px] rounded-md"
-                src="public/assets/Google Play.png"
+                src={playstoreimg}
               />
             </div>
           </div>
