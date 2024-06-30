@@ -1,13 +1,12 @@
-import {  useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import LongSongCard from '../components/songCards/LongSongCard';
 import useFetchSongs from '../hooks/useFetchSongs';
 import Loading from '../components/Loading';
 import { SearchContext } from '../context/SearchContext';
 
 const ListeningHistory = () => {
-
-    const {search:artist}= useContext(SearchContext)
-    const { songs, loading, error } = useFetchSongs(artist);
+    const { search: artist } = useContext(SearchContext);
+    const { songs, loading, error } = useFetchSongs(artist || 'emainem');  
     const [currentPlayingId, setCurrentPlayingId] = useState<number | null>(null);
 
     if (loading) return <Loading />;
