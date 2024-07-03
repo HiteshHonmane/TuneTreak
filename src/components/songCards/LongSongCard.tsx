@@ -58,7 +58,7 @@ const LongSongCard: React.FC<LongSongCardProps> = ({
         <div className="w-[234px] h-[84px] flex gap-[24px] justify-center items-center">
           <img width={84} src={song.album.cover_medium} alt={song.title} />
           <span className="w-[126px] h-[44px] font-sf-pro-display flex flex-col gap-1">
-            <div className="text-[16px] text-[#0A0502] font-medium">
+            <div className="text-[16px] text-[#0A0502] overflow-hidden font-medium">
               {song.title}
             </div>
             <div className="text-sm text-[#99938F]">{song.artist.name}</div>
