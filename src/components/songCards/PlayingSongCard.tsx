@@ -8,8 +8,12 @@ import songImg from '/assets/song.png'
 
 const PlayingSongCard: React.FC = () => {
 
+
+  if(window.innerWidth > 768){
+    
+  
   return (
-    <div className='w-[280px] h-[441px] flex flex-col rounded-[16px] items-center justify-center bg-white'>
+    <div className='w-[280px] h-[441px] flex flex-col rounded-[16px] items-center justify-center bg-white  '>
       <div className='rounded-[16px] mb-[20px]'>
         <img className='rounded-[16px]' width={248} height={213} src={ songImg } alt={''} />
       </div>
@@ -40,7 +44,7 @@ const PlayingSongCard: React.FC = () => {
         <button><img width={24} height={24} src={next} alt="" /></button>
       </div>
     </div>
-  );
+  );}
 };
 
 export default PlayingSongCard;

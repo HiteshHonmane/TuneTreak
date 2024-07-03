@@ -9,6 +9,8 @@ import Following from "/assets/profile.svg";
 import SubSvg from "/assets/crown.svg";
 import LogoutSvg from "/assets/login.svg";
 import { SearchContext } from "../../context/SearchContext";
+import appleimg from "/assets/App Store.png";
+import playstoreimg from "/assets/Google Play.png";
 
 const SideBar: React.FC = () => {
   const { search, handleSearch } = useContext(SearchContext);
@@ -18,8 +20,7 @@ const SideBar: React.FC = () => {
     setIsSearchVisible(!isSearchVisible);
   };
 
-  //Mobile / ipad view
-
+ if (window.innerWidth > 768){
   return (
     <div className="w-[314px] h-screen border ">
       <div id="logo" className="flex flex-row gap-[16px] mt-11 ml-8">
@@ -107,11 +108,11 @@ const SideBar: React.FC = () => {
             <div className="justify-center items-center gap-5 inline-flex">
               <img
                 className="w-[115px] h-[39px] rounded-md"
-                src="public/assets/App Store.png"
+                src={appleimg}
               />
               <img
                 className="w-[115px] h-[39px] rounded-md"
-                src="public/assets/Google Play.png"
+                src={playstoreimg}
               />
             </div>
           </div>
@@ -125,7 +126,7 @@ const SideBar: React.FC = () => {
               Language
             </span>
             <span className="text-stone-400 text-sm font-normal font-['SF Pro Display'] leading-[21px] tracking-tight">
-              :{" "}
+              :
             </span>
             <span className="text-stone-950/opacity-75 text-sm font-normal font-['SF Pro Display'] leading-[21px] tracking-tight">
               English (US)
@@ -135,6 +136,12 @@ const SideBar: React.FC = () => {
       </div>
     </div>
   );
-};
-
+}
+else{
+  return(
+    <></>
+  )
+}
+ 
+}
 export default SideBar;
