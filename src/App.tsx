@@ -28,9 +28,9 @@ function App() {
               <div className="hidden md:block ml-8 mt-8 ">
                 <ListeningHistory />
               </div>
-              <div className=" ml-8 mt-8">
+              {/* <div className=" ml-8 mt-8">
                 <PlayingSongCard />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
