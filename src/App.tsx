@@ -1,5 +1,5 @@
 import "./App.css";
-import PlayingSongCard from "./components/songCards/PlayingSongCard";
+// import PlayingSongCard from "./components/songCards/PlayingSongCard";
 import SideBar from "./components/side Bar/SideBar.tsx";
 import Top50 from "./pages/Top50.tsx";
 import ListeningHistory from "./pages/ListeningHistory.tsx";
@@ -28,9 +28,9 @@ function App() {
               <div className="hidden md:block ml-8 mt-8 ">
                 <ListeningHistory />
               </div>
-              <div className=" ml-8 mt-8">
+              {/* <div className=" ml-8 mt-8">
                 <PlayingSongCard />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
