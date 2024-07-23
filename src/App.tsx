@@ -1,5 +1,5 @@
 import "./App.css";
-import PlayingSongCard from "./components/songCards/PlayingSongCard";
+// import PlayingSongCard from "./components/songCards/PlayingSongCard";
 import SideBar from "./components/side Bar/SideBar.tsx";
 import Top50 from "./pages/Top50.tsx";
 import ListeningHistory from "./pages/ListeningHistory.tsx";
